@@ -9,7 +9,7 @@ def dire_bonjour():
 def choisir_liste():
     print("""\
     Le jeu possède une liste de mots par défaut.
-    Mais vous pouvez ajouter la vôtre sous forme d'un fichier texte nommé "liste_mots" dans le dossier du jeu.""")
+    Mais vous pouvez ajouter la vôtre sous forme d'un fichier texte nommé "mots_pendu" dans le dossier du jeu.""")
 
     choix_liste_mots = int(input("""
     Si vous souhaitez utiliser votre liste de mots, tapez 1
@@ -57,9 +57,23 @@ def choisir_nombre_essais():
         return nombre_essais
 
 
+# Cette fonction prend en argument le mot choisi et permet de retirer les accents
+def supprimer_accents(mot_choisi):
+    liste_mot_choisi = list(mot_choisi)  # Cette liste permet de convertir ma chaine de caractère en liste
+    liste_accents = ['à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ö', 'ù', 'û', 'ü', 'ÿ', 'ç']
+    liste_sans_accents = ['a', 'a', 'a', 'e', 'e', 'e', 'e', 'i', 'i', 'o', 'o', 'u', 'u', 'u', 'y', 'c']
+    for i in range(len(liste_mot_choisi)):
+        for j in range(len(liste_accents)):
+            if liste_mot_choisi[i] == liste_accents[j]:
+                liste_mot_choisi[i] = liste_sans_accents[j]
+    return liste_mot_choisi
+
+
 # Cette section est la partie principale du code
 dire_bonjour()
 mot_choisi = choisir_liste()
 print(mot_choisi)
 nombre_essais = choisir_nombre_essais()
 print(nombre_essais)
+liste_mot_choisi = supprimer_accents(mot_choisi)
+print(liste_mot_choisi)

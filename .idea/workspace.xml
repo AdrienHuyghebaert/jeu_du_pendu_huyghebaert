@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Ajout de la procédure &quot;dire_bonjour&quot; et de la fonction &quot;choisir_liste&quot;.">
+    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Ajout de la fonction &quot;choisir_nombre_essais&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script_jeu_du_pendu.py" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu_du_pendu.py" afterDir="false" />
     </list>
@@ -44,13 +44,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.script_jeu_du_pendu.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.script_jeu_du_pendu.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,7 +75,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716386186225</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout de la fonction &quot;choisir_nombre_essais&quot;">
+      <option name="closed" value="true" />
+      <created>1716389374998</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716389374998</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,6 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout de la procédure &quot;dire_bonjour&quot; et de la fonction &quot;choisir_liste&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la procédure &quot;dire_bonjour&quot; et de la fonction &quot;choisir_liste&quot;." />
+    <MESSAGE value="Ajout de la fonction &quot;choisir_nombre_essais&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction &quot;choisir_nombre_essais&quot;" />
   </component>
 </project>
