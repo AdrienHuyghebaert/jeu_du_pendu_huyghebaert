@@ -16,7 +16,7 @@ def choisir_liste():
     et si vous souhaitez utiliser la liste par défaut, tapez 2: """))
 
     mot = ""
-    while mot == "":
+    while mot == "":  # Cette boucle "while" permet de d'assurer tant que l'utilisateur n'a pas rentré 1 ou 2
         if choix_liste_mots == 1:
             with open("test_liste.txt", 'r') as fio:
                 mots = fio.read().splitlines()
@@ -40,7 +40,26 @@ def choisir_liste():
                                          "    et si vous souhaitez utiliser la liste par défaut, tapez 2: "))
 
 
+# Cette fonction permet de demander à l'utilisateur
+# combien il souhaite d'essais pour trouver le mot
+def choisir_nombre_essais():
+    print("\n"    
+          "    Par défaut, le jeu propose de trouver le mot en 6 tentatives.")
+    changement_nb_essais = int(input("\n"
+                                     "    Si vous souhaitez changer le nombre de tentatives, tapez 2. Sinon tapez 1 "))
+
+    if changement_nb_essais == 1:
+        nombre_essais = 6
+        return nombre_essais
+
+    elif changement_nb_essais == 2:
+        nombre_essais = int(input("    Combien d'essais souhaitez-vous ? (Rentrez un nombre entier) "))
+        return nombre_essais
+
+
 # Cette section est la partie principale du code
 dire_bonjour()
 mot_choisi = choisir_liste()
 print(mot_choisi)
+nombre_essais = choisir_nombre_essais()
+print(nombre_essais)
