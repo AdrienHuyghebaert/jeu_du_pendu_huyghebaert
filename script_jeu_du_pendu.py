@@ -5,8 +5,8 @@ import random
 
 
 # Cette procédure permet de dire bonjour à l'utilisateur.
-def dire_bonjour():
-    print("Bonjour et bienvenue sur le jeu du pendu !")
+def faire_introduction():
+    print("Vous avez choisi de lancer une partie du jeu du pendu")
     print("Veuillez ne pas rentrer de lettre avec des accents lors de vos tentatives\n")
 
 
@@ -80,6 +80,20 @@ def tester_lettre_trouvee(mot_liste, lettre_utilisateur, mot_recherche_liste):
     return lettre_trouvee, mot_recherche_liste
 
 
+# Cette fonction propose à l'utilisateur de rejour ou non au jeu du pendu
+def proposer_rejouer():
+    print("Souhaitez-vous refaire une partie ?")
+    choix = str(input("Répondez par 'oui' ou 'non'\n"))
+    while choix != 'oui' and choix != 'non':
+        choix = str(input("Entrée invalide. Répondez par 'oui' ou 'non'\n"))
+    if choix == 'oui':
+        jeu_du_pendu()
+    else :
+        print("Très bien. Vous allez quitter le jeu.")
+
+
+# Cette fonction permet de donner un indice à l'utilisateur si il ne lui reste qu'un seul essai et si il le souhaite.
+# Renvoie une lettre qui n'est pas dans le mot à trouver et qui n'a pas été encore donnée.
 def donner_indice(liste_utilisateur_testees, mot_liste, alphabet_liste):
     ensemble_valeurs_utilisees = set(liste_utilisateur_testees + mot_liste)
     ensemble_alphabet = set(alphabet_liste)
@@ -90,12 +104,11 @@ def donner_indice(liste_utilisateur_testees, mot_liste, alphabet_liste):
 
     # Choisir aléatoirement une lettre indice parmi les lettres disponibles
     indice = random.choice(lettres_indice)
-
     return indice
 
 # Ceci est la fonction principale qui appelle les autres fonctions et procédures.
 def jeu_du_pendu():
-    dire_bonjour()
+    faire_introduction()
     mot_choisi = choisir_liste()  # Extraire de la liste choisie le mot.
     nombre_essais = choisir_nombre_essais()
     mot_sans_accents = supprimer_accents(mot_choisi)  # Suppression des éventuels accents dans le mot.
@@ -152,8 +165,10 @@ def jeu_du_pendu():
 
     if nombre_essais == 0:
         print(f"Dommage vous avez perdu. Le mot à trouver était {mot_sans_accents}.")
+        proposer_rejouer()
     elif lettres_a_trouver == 0:
         print(f"Bravo ! Vous avez le mot. C'était {mot_sans_accents}")
+        proposer_rejouer()
 
 
 jeu_du_pendu()
