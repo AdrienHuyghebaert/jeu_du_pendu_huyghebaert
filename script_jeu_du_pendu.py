@@ -11,14 +11,12 @@ def faire_introduction():
 
 
 # Cette fonction permet de demander à l'utilisateur si il souhaite
-# utliser sa liste de mots personnelle ou celle par défaut et de retourner un mot au hasard.
+# utiliser sa liste de mots personnelle ou celle par défaut et de retourner un mot au hasard.
 def choisir_liste():
     print("Le jeu possède une liste de mots par défaut, mais vous pouvez jouer avec la vôtre.")
     choix_liste_mots = input("Si vous souhaitez utiliser votre liste de mots, rentrez 'oui', sinon rentrez 'non' :\n")
-    # Cette boucle "while" permet de s'assurer tant que l'utilisateur n'a pas rentré autre chose que oui ou non.
-    while choix_liste_mots != 'oui' and choix_liste_mots != 'non':
-        choix_liste_mots = input("Entrée invalide. Si vous souhaitez utiliser votre liste de mots, rentrez 'oui', sinon rentrez 'non' :\n")
 
+    # Cette boucle "while" permet de s'assurer tant que l'utilisateur n'a pas rentré autre chose que oui ou non.
     mot = ""
     while mot == "":
         if choix_liste_mots == 'non':
@@ -31,10 +29,17 @@ def choisir_liste():
             nom_fichier = input("Rentrez le nom de votre fichier :\n")
             chemin_fichier = input("Rentrez le chemin pour accèder à votre fichier :\n")
             fichier_utilisateur = os.path.join(chemin_fichier, nom_fichier + '.txt')
-            with open(fichier_utilisateur, 'r', encoding='utf8') as fio:
-                mots = fio.read().splitlines()
-            mot = random.choice(mots)
-            return mot
+            while not os.path.exists(fichier_utilisateur):
+                print(
+                    "Le chemin pour accèder au fichier n'existe pas. Veuillez rentrer un nom de fichier et un chemin valide.")
+                nom_fichier = input("Rentrez le nom de votre fichier :\n")
+                chemin_fichier = input("Rentrez le chemin pour accèder à votre fichier :\n")
+                fichier_utilisateur = os.path.join(chemin_fichier, nom_fichier + '.txt')
+            else:
+                with open(fichier_utilisateur, 'r', encoding='utf8') as fio:
+                    mots = fio.read().splitlines()
+                mot = random.choice(mots)
+                return mot
 
         else:
             choix_liste_mots = input("Choix non valide. Veuillez rentrez 'oui' ou 'non' :\n")
@@ -72,7 +77,6 @@ def passer_le_mot_en_liste(mot_sans_accents):
 def tester_lettre_trouvee(mot_liste, lettre_utilisateur, mot_recherche_liste):
     # Cette variable permet de savoir combien de lettres ont été trouvées.
     lettre_trouvee = 0
-
 
     for i in range(len(mot_recherche_liste)):
         if mot_liste[i] == lettre_utilisateur:
@@ -115,7 +119,7 @@ def jeu_du_pendu():
     nombre_essais = choisir_nombre_essais()
     mot_sans_accents = supprimer_accents(mot_choisi)  # Suppression des éventuels accents dans le mot.
     mot_liste = passer_le_mot_en_liste(mot_sans_accents)  # Le mot passe du type string à liste.
-
+    print(mot_liste)
     alphabet_liste = list(string.ascii_lowercase)  # Liste des lettres de l'alphabet.
     lettres_utilisateur_testees = []  # Initialisaion d'une liste qui regroupe les lettres testées par l'utilisateur.
 

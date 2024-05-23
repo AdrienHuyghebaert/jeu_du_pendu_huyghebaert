@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Code complet">
+    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Correction de certains problèmes et mise à la norme PEP8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script_jeu_du_pendu.py" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu_du_pendu.py" afterDir="false" />
     </list>
@@ -118,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716430150567</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Correction de certains problèmes et mise à la norme PEP8">
+      <option name="closed" value="true" />
+      <created>1716432319589</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716432319589</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +147,7 @@
     <MESSAGE value="Changement de la fonction pour enlever les accents et divers correctifs" />
     <MESSAGE value="Ajout de la partie principale du code et ajout de certains cas pas pris en compte" />
     <MESSAGE value="Code complet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code complet" />
+    <MESSAGE value="Correction de certains problèmes et mise à la norme PEP8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction de certains problèmes et mise à la norme PEP8" />
   </component>
 </project>
