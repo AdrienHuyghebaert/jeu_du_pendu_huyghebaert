@@ -32,7 +32,8 @@ def choisir_liste():
 
             # Boucle qui tourne tant que le chemin pour le fichier n'est pas valide.
             while not os.path.exists(fichier_utilisateur):
-                print("Le chemin pour accèder au fichier n'existe pas. Veuillez rentrer un nom de fichier et un chemin valide.")
+                print("Le chemin pour accèder au fichier n'existe pas. Veuillez rentrer un nom de fichier et un "
+                      "chemin valide.")
                 nom_fichier = input("Rentrez le nom de votre fichier :\n")
                 chemin_fichier = input("Rentrez le chemin pour accèder à votre fichier :\n")
                 fichier_utilisateur = os.path.join(chemin_fichier, nom_fichier + '.txt')
@@ -49,14 +50,22 @@ def choisir_liste():
 # Cette fonction permet de demander à l'utilisateur combien il souhaite d'essais pour trouver le mot.
 def choisir_nombre_essais():
     print("\nPar défaut, le jeu propose de trouver le mot en 6 essais.")
-    changement_nb_essais = int(input("Si vous souhaitez changer le nombre d'essais, tapez '1', sinon tapez '2' :\n"))
+    changement_nb_essais = str(input("Si vous souhaitez changer le nombre d'essais, rentrez 'changer', sinon rentrez "
+                                     "'non' :\n"))
 
-    if changement_nb_essais == 2:
+    # Cette boucle while tourne tant que l'utilisateur n'a pas rentrer une variable valide (1 ou 2).
+    while changement_nb_essais != 'changer' and changement_nb_essais != 'non':
+        changement_nb_essais = str(input("Entrée invalide. Si vous souhaitez changer le nombre d'essais, rentrez "
+                                         "'changer', sinon rentrez 'non' :\n"))
+
+    if changement_nb_essais == 'non':
         nombre_essais = 6
+        print("\n\n\n\n\n")
         return nombre_essais
 
-    elif changement_nb_essais == 1:
+    elif changement_nb_essais == 'changer':
         nombre_essais = int(input("Combien d'essais souhaitez-vous ? (Rentrez un nombre entier)\n"))
+        print("\n\n\n\n\n")
         return nombre_essais
 
 
@@ -76,6 +85,7 @@ def passer_le_mot_en_liste(mot_sans_accents):
 # Cette fonction va regarder si la lettre que l'utilisateur rentre est présente dans le mot à trouver.
 # Si oui elle affiche la lettre à la place du tiret.
 def tester_lettre_trouvee(mot_liste, lettre_utilisateur, mot_recherche_liste):
+
     # Cette variable permet de savoir combien de lettres ont été trouvées.
     lettre_trouvee = 0
 
@@ -94,6 +104,7 @@ def proposer_rejouer():
         choix = str(input("Entrée invalide. Répondez par 'oui' ou 'non'\n"))
     if choix == 'oui':
         jeu_du_pendu()
+        print("\n\n\n\n\n")
     else:
         print("Très bien. Vous allez quitter le jeu.")
 
@@ -120,11 +131,10 @@ def jeu_du_pendu():
     nombre_essais = choisir_nombre_essais()
     mot_sans_accents = supprimer_accents(mot_choisi)  # Suppression des éventuels accents dans le mot.
     mot_liste = passer_le_mot_en_liste(mot_sans_accents)  # Le mot passe du type string à liste.
-    print(mot_liste)
     alphabet_liste = list(string.ascii_lowercase)  # Liste des lettres de l'alphabet.
     lettres_utilisateur_testees = []  # Initialisaion d'une liste qui regroupe les lettres testées par l'utilisateur.
 
-    mot_recherche_liste = ['_' for i in range(len(mot_choisi))]  # Initialisation de l'affichage du mot à trouver.
+    mot_recherche_liste = ['_' for _ in range(len(mot_choisi))]  # Initialisation de l'affichage du mot à trouver.
     mot_recherche_string = ''.join(mot_recherche_liste)  # Passage en chaine de caractères pour affichage.
 
     lettres_a_trouver = len(mot_choisi)  # Compteur qui permet de savoir combien de lettres il y a à trouver.
@@ -137,10 +147,12 @@ def jeu_du_pendu():
     while lettres_a_trouver != 0 and nombre_essais != 0:
 
         print(f"Voici où vous en êtes de votre recherche : {mot_recherche_string}")
+
         # N'affiche pas la liste des lettres tentées par l'utilisateur si la liste est vide.
-        if lettres_utilisateur_testees != []:
+        if lettres_utilisateur_testees:
+
             # Si utilisé, ajoute l'indice à la liste des valeurs tentées par l'utilisateur.
-            if indice != []:
+            if indice:
                 print(f"Ces lettres {lettres_utilisateur_testees + indice} ne sont pas dans le mot à trouver.")
 
             else:
@@ -156,7 +168,6 @@ def jeu_du_pendu():
         if lettre_trouvee != 0:
             mot_recherche_string = ''.join(mot_recherche_liste)  # Passage en chaine de caractères pour l'affichage
             lettres_a_trouver -= lettre_trouvee  # Changer le nombre de lettres encore à trouver
-            print(lettres_a_trouver)
             print(f"Il y a {lettre_trouvee} {lettre_utilisateur} dans le mot à trouver.")
 
         # Si l'utilisateur n'a pas trouvé de lettre.
@@ -170,11 +181,14 @@ def jeu_du_pendu():
         # Si il ne reste plus qu'un seul essai à l'utilisateur, lui proposer un indice.
         if nombre_essais == 1 and utilisation_indice == 1:
             utilisation_indice = 0  # L'utilisateur n'aura plus le droit à un indice
-            print("Attention vous n'avez plus qu'un seul essai pour trouver votre mot")
+            print("Attention vous n'avez plus qu'un seul essai pour trouver votre mot.")
 
             choix_indice = str(input("Si vous voulez un indice marquez 'indice', sinon marquez 'non'\n"))
+
+            # Cette boucle while tourne tant que l'utilisateur n'a pas rentrer une variable valide (oui ou non).
             while choix_indice != 'indice' and choix_indice != 'non':
-                choix_indice = str(input("Entrée invalide. Si vous voulez un indice marquez 'indice', sinon marquez 'non'\n"))
+                choix_indice = str(input("Entrée invalide. Si vous voulez un indice marquez 'indice', sinon marquez "
+                                         "'non'\n"))
 
             print("\n\n\n\n\n")
             if choix_indice == 'indice':
@@ -182,11 +196,11 @@ def jeu_du_pendu():
                 print(f"La lettre {indice} n'est pas dans le mot.\n")
 
     if nombre_essais == 0:
-        print(f"Dommage vous avez perdu. Le mot à trouver était {mot_sans_accents}.")
+        print(f"Dommage, vous avez perdu. Le mot à trouver était {mot_sans_accents}.")
         proposer_rejouer()
 
     elif lettres_a_trouver == 0:
-        print(f"Bravo ! Vous avez le mot. C'était {mot_sans_accents}")
+        print(f"Bravo ! Vous avez trouvé le mot. C'était {mot_sans_accents}")
         proposer_rejouer()
 
 
