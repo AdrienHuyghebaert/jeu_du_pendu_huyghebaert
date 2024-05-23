@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Ajout de la fonction &quot;supprimer_accents&quot;">
+    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Changement de la fonction pour enlever les accents et divers correctifs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script_jeu_du_pendu.py" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu_du_pendu.py" afterDir="false" />
     </list>
@@ -94,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716392235131</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changement de la fonction pour enlever les accents et divers correctifs">
+      <option name="closed" value="true" />
+      <created>1716416669237</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716416669237</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +120,7 @@
     <MESSAGE value="Ajout de la procédure &quot;dire_bonjour&quot; et de la fonction &quot;choisir_liste&quot;." />
     <MESSAGE value="Ajout de la fonction &quot;choisir_nombre_essais&quot;" />
     <MESSAGE value="Ajout de la fonction &quot;supprimer_accents&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la fonction &quot;supprimer_accents&quot;" />
+    <MESSAGE value="Changement de la fonction pour enlever les accents et divers correctifs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changement de la fonction pour enlever les accents et divers correctifs" />
   </component>
 </project>
