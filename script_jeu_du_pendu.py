@@ -29,9 +29,10 @@ def choisir_liste():
             nom_fichier = input("Rentrez le nom de votre fichier :\n")
             chemin_fichier = input("Rentrez le chemin pour accèder à votre fichier :\n")
             fichier_utilisateur = os.path.join(chemin_fichier, nom_fichier + '.txt')
+
+            # Boucle qui tourne tant que le chemin pour le fichier n'est pas valide.
             while not os.path.exists(fichier_utilisateur):
-                print(
-                    "Le chemin pour accèder au fichier n'existe pas. Veuillez rentrer un nom de fichier et un chemin valide.")
+                print("Le chemin pour accèder au fichier n'existe pas. Veuillez rentrer un nom de fichier et un chemin valide.")
                 nom_fichier = input("Rentrez le nom de votre fichier :\n")
                 chemin_fichier = input("Rentrez le chemin pour accèder à votre fichier :\n")
                 fichier_utilisateur = os.path.join(chemin_fichier, nom_fichier + '.txt')
@@ -173,8 +174,7 @@ def jeu_du_pendu():
 
             choix_indice = str(input("Si vous voulez un indice marquez 'indice', sinon marquez 'non'\n"))
             while choix_indice != 'indice' and choix_indice != 'non':
-                choix_indice = str(
-                    input("Entrée invalide. Si vous voulez un indice marquez 'indice', sinon marquez 'non'\n"))
+                choix_indice = str(input("Entrée invalide. Si vous voulez un indice marquez 'indice', sinon marquez 'non'\n"))
 
             print("\n\n\n\n\n")
             if choix_indice == 'indice':
