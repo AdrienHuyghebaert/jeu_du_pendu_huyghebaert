@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Ajout test si le fichier existe bien ou non">
+    <list default="true" id="d3791ff3-01c3-42e2-bf59-2770111d1638" name="Changes" comment="Ajout de la liste de mots par défaut">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script_jeu_du_pendu.py" beforeDir="false" afterPath="$PROJECT_DIR$/script_jeu_du_pendu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716434577297</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Correctif mineur">
+      <option name="closed" value="true" />
+      <created>1716434715303</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716434715303</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ajout de la liste de mots par défaut">
+      <option name="closed" value="true" />
+      <created>1716436725338</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716436725338</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +172,8 @@
     <MESSAGE value="Code complet" />
     <MESSAGE value="Correction de certains problèmes et mise à la norme PEP8" />
     <MESSAGE value="Ajout test si le fichier existe bien ou non" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout test si le fichier existe bien ou non" />
+    <MESSAGE value="Correctif mineur" />
+    <MESSAGE value="Ajout de la liste de mots par défaut" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la liste de mots par défaut" />
   </component>
 </project>
